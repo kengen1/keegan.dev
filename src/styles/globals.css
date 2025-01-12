@@ -5,12 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --container-bg: #f9f9f9; /* Light mode container background */
+  --container-shadow: rgba(0, 0, 0, 0.1); /* Light mode shadow */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --container-bg: #1a1a1a; /* Dark mode container background */
+    --container-shadow: rgba(0, 0, 0, 0.5); /* Dark mode shadow */
   }
 }
 
@@ -18,4 +22,28 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container Styling */
+.container {
+  background: var(--container-bg);
+  box-shadow: 0px 4px 10px var(--container-shadow);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  max-width: 65%;
+  width: 100%;
+  margin: 5rem auto 0;
+}
+
+.container-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--foreground);
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+.container-close-btn:hover {
+  color: var(--foreground-hover, #ffffff); /* Optional hover color */
 }
