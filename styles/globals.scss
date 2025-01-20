@@ -1,0 +1,59 @@
+// Global styles.
+@import "./variables.scss";
+
+html {
+    height: 100%;
+
+    // Fonts.
+    font-family: $regular-font-stack;
+    font-size: 16px; // Setting what 1rem is. See: https://stackoverflow.com/questions/48451764/how-to-set-base-size-for-rem.
+
+    /* ------------------------ Scrollbar styles. ------------------------ */
+    overflow-x: hidden;
+    // Prevents scrollbar from 'pushing' content.
+    // Sourced from: https://stackoverflow.com/questions/19208826/preventing-relayout-due-to-scrollbar.
+    overflow: overlay;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $cool-grey-400;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(211, 211, 221);
+        border-radius: 10px;
+    }
+
+    body {
+        margin: 0;
+        position: relative;
+        background: black;
+    }
+
+    pre,
+    code {
+        font-family: "Consolas", "Courier New", monospace;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    p {
+        line-height: $line-spacing-md;
+        font-family: $regular-font-stack;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $code-font-stack;
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../../styles/variables.scss";
+
+.contentContainer {
+    margin: 0 auto;
+    padding: $spacing-sm;
+    box-sizing: border-box;
+
+    &.centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
