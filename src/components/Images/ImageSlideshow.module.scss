@@ -1,0 +1,15 @@
+.slideshowContainer {
+  max-width: 100%; /* Make the carousel responsive */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.imageContainer {
+  padding: 5px; /* Add space between images */
+}
+
+.image {
+  width: 100%; /* Ensure the image fills its container */
+  height: 350px; /* Set a fixed height */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}

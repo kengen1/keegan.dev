@@ -1,0 +1,22 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: $spacing-xs;
+    row-gap: $spacing-xs;
+
+    .imageContainer {
+        position: relative;
+        @include elevation-shadow;
+    }
+
+    .image {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+}
