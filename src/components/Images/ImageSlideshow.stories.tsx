@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import ImageSlideshow from "./ImageSlideshow";
 
 const meta: Meta<typeof ImageSlideshow> = {
-    title: "Components/ImageGallery/ImageSlideshow",
+    title: "Components/Images/ImageSlideshow",
     component: ImageSlideshow,
     tags: ["autodocs"],
 };

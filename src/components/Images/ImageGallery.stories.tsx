@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import ImageGallery from "./ImageGallery";
 
 const meta: Meta<typeof ImageGallery> = {
-    title: "Components/ImageGallery",
+    title: "Components/Images/ImageGallery",
     component: ImageGallery,
     tags: ["autodocs"],
 };

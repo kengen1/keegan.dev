@@ -4,7 +4,7 @@ interface SpotifyEmbedProps {
   playlistUrl: string;
   width?: string | number;
   height?: string | number;
-  theme?: "0" | "1"; // '0' for light theme, '1' for dark theme
+  theme?: "0" | "1";
 }
 
 const SpotifyEmbed: React.FC<SpotifyEmbedProps> = ({
