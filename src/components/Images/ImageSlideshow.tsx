@@ -21,23 +21,42 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({ images }) => {
     </div>
   ));
 
+  const renderPrevButton = ({ isDisabled }: { isDisabled?: boolean }) => (
+    <button
+      className={`${styles.arrowButton} ${styles.prevButton}`}
+      disabled={isDisabled}
+    >
+      &#8249; {/* Unicode for left arrow */}
+    </button>
+  );
+
+  const renderNextButton = ({ isDisabled }: { isDisabled?: boolean }) => (
+    <button
+      className={`${styles.arrowButton} ${styles.nextButton}`}
+      disabled={isDisabled}
+    >
+      &#8250; {/* Unicode for right arrow */}
+    </button>
+  );
+
   return (
     <div className={styles.slideshowContainer}>
       <AliceCarousel
         items={items}
         autoPlay
-        autoPlayInterval={3000}
+        autoPlayInterval={1500}
         infinite
-        disableButtonsControls
-        animationType="fadeout"
         animationDuration={800}
         mouseTracking
         responsive={{
-          0: { items: 1 }, // Show 1 image for smaller screens
-          768: { items: 2 }, // Show 2 images for medium screens
-          1024: { items: 3 }, // Show 3 images for larger screens
+          0: { items: 1 },
+          768: { items: 2 },
+          1024: { items: 3 },
         }}
-        disableDotsControls={false} // Enable dots navigation
+        controlsStrategy="responsive"
+        disableDotsControls={false}
+        renderPrevButton={renderPrevButton}
+        renderNextButton={renderNextButton}
       />
     </div>
   );

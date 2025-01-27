@@ -1,0 +1,40 @@
+@import "../../../styles/variables.scss";
+
+.navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-background-colour;
+  color: $light-text-colour;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
+  z-index: 1000;
+
+  &--horizontal {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    height: 80px; // Fixed height for horizontal navbar
+    width: auto;
+    padding: 0 $spacing-sm;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+      height: auto;
+      width: 80px;
+      row-gap: $spacing-xs;
+    }
+  }
+
+  &--vertical {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    width: 85px;
+    height: auto;
+    padding: $spacing-sm 0;
+  }
+}
