@@ -5,7 +5,7 @@ import { ContentContainer } from "../Container";
 
 // Meta information for the `Window` component
 const meta: Meta<typeof Window> = {
-  title: "Portfolio/Window",
+  title: "Components/Window",
   component: Window,
   tags: ["autodocs"], // Enables documentation
 };

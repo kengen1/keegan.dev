@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import NavbarVertical from "./NavbarVertical";
 
 const meta: Meta<typeof NavbarVertical> = {
-    title: "Components/NavbarVertical",
+    title: "Components/Navbar/NavbarVertical",
     component: NavbarVertical,
     tags: ["autodocs"],
     argTypes: {},

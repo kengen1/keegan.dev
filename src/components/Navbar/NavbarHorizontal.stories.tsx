@@ -4,7 +4,7 @@ import NavbarHorizontal from "./NavbarHorizontal";
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from "react-icons/fa";
 
 const meta: Meta<typeof NavbarHorizontal> = {
-    title: "Components/NavbarHorizontal",
+    title: "Components/Navbar/NavbarHorizontal",
     component: NavbarHorizontal,
     tags: ["autodocs"],
     argTypes: {},
