@@ -1,0 +1,31 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.digitalGardenContainer {
+  /* Instead of position: fixed or transform, we rely on the
+     parent HTML overlay to position this. */
+  display: flex;
+  align-items: center;
+
+  /* Give it a size that simulates a "screen" area. Adjust as desired. */
+  width: 300px;
+  height: 200px;
+
+  /* Optional styling */
+  background: #222;      /* or remove if you want a transparent background */
+  border-radius: 6px;    /* slight rounding, optional */
+  overflow: hidden;      /* hides any overflow from the embedded canvas */
+}
+
+.bonsaiCanvas {
+  /* If you want the bonsai to occupy part of the space */
+  width: 120px;
+  height: 120px;
+  margin-right: 1rem;  /* space between the canvas and your link text */
+}
+
+.linkText {
+  font-family: $code-font-stack;
+  text-decoration: none;
+  color: #ccc;
+}
