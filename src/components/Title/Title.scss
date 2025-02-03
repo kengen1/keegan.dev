@@ -1,15 +1,37 @@
 @import "../../../styles/variables.scss";
 
 .webpage-title {
-  font-family: $code-font-stack;
+  font-family: 'Fira Code', 'Courier New', monospace; // Terminal-like font
   font-size: $font-size-xxl; // Matches 32px from SCSS
   font-weight: 700;
-  color: $light-text-colour; // Light text color for dark mode
-  text-align: center;
-  margin-top: $spacing-md;
+  color: $light-text-colour;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 4px;
 
   .diamond {
     display: inline-block;
-    transition: color 0.5s ease-in-out; // Smooth transition
+    transition: color 0.5s ease-in-out;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    animation: blink 1s infinite;
+  }
+
+  .cursor.visible {
+    opacity: 1;
+  }
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
   }
 }
+
