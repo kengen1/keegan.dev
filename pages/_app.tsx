@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app'
 import { Navbar } from '@/components/Navbar'
 import Scene from '@/components/3DScene/Scene'
 import { Title } from '@/components/Title'
-import "styles/global.scss";
+// import "styles/global.scss";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
