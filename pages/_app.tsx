@@ -1,14 +1,19 @@
-// pages/_app.tsx
 import type { AppProps } from 'next/app'
-import dynamic from 'next/dynamic'
 import { Navbar } from '@/components/Navbar'
 import Scene from '@/components/3DScene/Scene'
+import { Title } from '@/components/Title'
+import "styles/global.scss";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
+      {/* Fixed Webpage Title in Top-Left Corner */}
+      <Title />
+
+      {/* Navbar */}
       <Navbar />
 
+      {/* Background 3D Scene */}
       <div
         style={{
           position: 'fixed',
@@ -16,13 +21,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           left: 0,
           width: '100vw',
           height: '100vh',
-          zIndex: -1
+          zIndex: -1,
         }}
       >
         <Scene />
       </div>
 
-      {/* Your actual page content goes on top */}
+      {/* Main Page Content */}
       <Component {...pageProps} />
     </>
   )

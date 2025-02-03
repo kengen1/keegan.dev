@@ -6,16 +6,16 @@ import Bonsai from './Bonsai'
 
 export default function Scene() {
   return (
-    <Canvas camera={{ position: [-20, 0, -15], fov: 55 }}>
+    <Canvas camera={{ position: [0, 0, 20], fov: 65 }}>
       <pointLight position={[10, 10, 10]} intensity={1.5} />
       <Suspense fallback={null}>
-        {/* MacBook stays floating */}
-        <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
+        {/* Ensure MacBook is facing forward */}
+        <group position={[0, 1, 0]}>
           <Macbook />
         </group>
 
-        {/* Bonsai positioned at ground level to the right of the MacBook */}
-        <group rotation={[0, Math.PI, 0]} position={[-8, -2.5, -5]} scale={[2, 2, 2]}>
+        {/* Ensure Bonsai is positioned correctly without flipping */}
+        <group position={[8, -2.5, 5]} scale={[2, 2, 2]}>
           <Bonsai />
         </group>
 
