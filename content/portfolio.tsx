@@ -106,7 +106,7 @@ const portfolio: PortfolioData = {
             },
             {
                 icon: <img src="/icons/socials/resume.png" alt="Resume" width={30} height={30} />,
-                url: "/keegan_hidson_resume.pdf",
+                url: "/keegan_hidson_resume_2025.pdf",
                 label: "Resume",
             },
         ],
