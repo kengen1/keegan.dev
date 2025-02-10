@@ -42,7 +42,7 @@ const TerminalWindow: React.FC = () => {
         </div>
 
         {/* Script logging */}
-        <div className={styles.scriptLog}>Launching kgn.dev 🏄‍♂️ ...</div>
+        <div className={styles.scriptLog}>Launching kengen.dev 🏄‍♂️ ...</div>
 
         {/* Typing effect after executing the command */}
         <div className={styles.commandLine}>
