@@ -5,6 +5,7 @@ import { SectionDivider } from "@/components/Divider";
 import { ImageSlideshow } from "@/components/Images";
 import { SpotifyEmbed } from "@/components/SpotifyEmbed";
 import UnorderedList from "@/components/UnorderedList";
+import { useRedirectHome } from "@/hooks/router";
 
 const AboutPage: React.FC = () => {
     const hobbiesImages = [
@@ -19,8 +20,11 @@ const AboutPage: React.FC = () => {
         "/images/film/IMG_9.jpeg",
         "/images/film/IMG_10.jpeg",
     ];
+    
+    const redirectToHome = useRedirectHome();
 
     return (
+        
         <Window>
             <SectionDivider text="About Me" />
             <ContentContainer>

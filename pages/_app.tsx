@@ -1,33 +1,34 @@
-import type { AppProps } from 'next/app';
-import { useRouter } from 'next/router';
-import { Navbar } from '@/components/Navbar';
-import Scene from '@/components/3DScene/Scene';
+import portfolio from "../content/portfolio";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { useState } from "react";
+import { useTransitionFix } from "@/hooks/router";
+import { Navbar } from "@/components/Navbar"; // ✅ Import Navbar
 import "styles/_global.scss";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  const isHomePage = router.pathname === "/";
+const App = ({ Component, pageProps }: AppProps) => {
+    const [searchQuery, setSearchQuery] = useState<string>("");
+    useTransitionFix();
 
-  return (
-    <>
-      <Navbar />      
-      {/* Render Three.js Scene only on Home Page */}
-      {isHomePage && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            zIndex: -1,
-          }}
-        >
-          <Scene />
-        </div>
-      )}
+    return (
+        <>
+            {/* Meta Head */}
+            <Head>
+                <title>{portfolio.meta.mainTitle}</title>
+                <meta
+                    name="description"
+                    content={portfolio.meta.mainDescription}
+                />
+                <meta property="og:title" content={portfolio.meta.ogTitle} />
+                <meta
+                    property="og:description"
+                    content={portfolio.meta.ogDescription}
+                />
+            </Head>
+            <Navbar />
+            <Component {...pageProps} />
+        </>
+    );
+};
 
-      <Component {...pageProps} />
-    </>
-  );
-}
+export default App;
