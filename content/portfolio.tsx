@@ -11,13 +11,20 @@ import WSUJuniorDataEngineer from "./work-experience/wsu_junior_data_engineer";
 import AmazonItSupportEngineer from "./work-experience/amazon-it-support-engineer";
 import { FaEnvelope, FaFileAlt, FaGithub, FaLinkedin } from "react-icons/fa";
 import AchievementItem from "@/components/Achievement/AchievementItem";
+import OgImage from "public/og-image.avif";
 
 interface PortfolioData {
     meta: {
         // The contents of <title> for the root page / and all child pages unless
         // overridden.
         mainTitle: string;
-
+        // The contents of <meta name="description"> for the root and all children
+        // unless overridden.
+        mainDescription: string;
+        // Open graph protocol title.
+        ogTitle: string;
+        // Open graph protocol description.
+        ogDescription: string;
     };
     profile: {
         // Social icons and links.
@@ -73,7 +80,12 @@ export interface EducationContent {
 
 const portfolio: PortfolioData = {
     meta: {
-        mainTitle: "Kegan Hidson - Dev Portfolio",
+        mainTitle: "Keegan Hidson - Developer Portfolio",
+        mainDescription:
+            "Welcome to my developer portfolio, where I try to explore and demystify the intracacies of software engineering.",
+        ogTitle: "Keegan Hidsons's Developer Portfolio",
+        ogDescription:
+            "A curious developer's portfolio and blog on all things software engineering.",
     },
     profile: {
         socials: [
