@@ -1,22 +1,22 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables.scss" as *;
 
 .navbar {
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $dark-background-colour;
+  background-color: transparent;
   color: $light-text-colour;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
   z-index: 1000;
+  gap: 10px;
 
   &--horizontal {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
-    height: 80px; // Fixed height for horizontal navbar
+    height: 80px;
     width: auto;
     padding: 0 $spacing-sm;
 

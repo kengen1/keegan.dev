@@ -80,10 +80,8 @@ const Button: React.FC<ButtonProps> = ({
             {ButtonCore}
         </a>
     ) : internalUrl ? (
-        <Link href={internalUrl} scroll={false}>
-            <a aria-label={ariaLabel} style={{ textDecoration: "none" }}>
-                {ButtonCore}
-            </a>
+        <Link href={internalUrl} scroll={false} className={styles.anchor} aria-label={ariaLabel}>
+            {ButtonCore}
         </Link>
     ) : (
         ButtonCore

@@ -1,8 +1,7 @@
-@import "../../../styles/variables.scss";
-@import "../../../styles/mixins.scss";
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
 
 .button {
-    // Remove default HTML button styling.
     background: none;
     color: inherit;
     border: none;
@@ -11,21 +10,19 @@
     outline: inherit;
     text-align: center;
 
-    // Vertically center text and icon.
     display: inline-flex;
     align-items: center;
     column-gap: 8px;
-
-    // Custom styles.
+    
     padding: 0.64rem 0.85rem 0.6rem 0.85rem;
-    font-family: $code-font-stack;
+    font-family: "SF Mono", monospace;
     border: 1px solid;
     border-color: rgba($color: $dark-subtitle-colour, $alpha: 0.3);
 
     transition: background 0.2s, color 0.2s, transform 0.05s, margin 0.05s;
 
     &.primary {
-        background: rgba($color: #0d0d11, $alpha: 0.7);
+        background: rgba($color: #0d0d11, $alpha: 1);
         color: $dark-text-colour;
 
         &:hover {
@@ -36,21 +33,6 @@
         &:active {
             transform: scale(0.95);
         }
-    }
-
-    &.secondary {
-        background: rgba($color: #0d0d11, $alpha: 0.5);
-        color: $dark-text-colour;
-    }
-
-    &.tertiary {
-        border: none;
-        text-decoration: underline;
-        color: $primary;
-    }
-
-    &.callToAction {
-        background: $cool-grey-400;
     }
 
     .icon {

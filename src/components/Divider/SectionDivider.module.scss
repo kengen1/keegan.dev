@@ -1,4 +1,4 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables.scss" as *;
 
 @mixin dividerDecorator {
     content: "";
@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     column-gap: $spacing-sm;
+    padding: 0 4rem;
 
     .centralText {
         color: $dark-text-colour;
@@ -25,9 +26,10 @@
     }
 
     .divider {
-        width: 100%;
+        flex: 1;
         border-bottom: 1px solid rgb(84, 84, 84);
         position: relative;
+        margin: 0;
     }
 
     .leftDivider {
@@ -44,6 +46,7 @@
         }
     }
 }
+
 
 @media screen and (max-width: $sm) {
     .sectionDivider {

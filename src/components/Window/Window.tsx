@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { IoMdClose as CloseIcon } from "react-icons/io";
+import { OutsideClickHandler, useClickOutside } from "@/hooks/window";
 import styles from "./Window.module.scss";
-import { OutsideClickHandler, useClickOutside } from "../../hooks/window";
 
 interface Props {
     children?: React.ReactNode;
@@ -23,25 +23,26 @@ const Window: React.FC<Props> = ({
             ref={windowRef}
             className={styles.window}
             initial={{
-                opacity: 0,
-                position: "absolute",
-                transform: "translateX(-50%)",
-                top: "150px",
+                y: "100vh",
+                x: "-50%",
+                left: "50%",
             }}
             animate={{
-                opacity: 1,
-                position: "absolute",
-                top: "100px",
+                y: 0,
+                x: "-50%",
                 left: "50%",
-                transform: "translateX(-50%)",
             }}
             exit={{
-                opacity: 0,
+                y: "100vh",
             }}
             transition={{
-                duration: 0.75,
+                duration: 0.6,
+                ease: "easeOut",
             }}
-            style={{}}
+            style={{
+                position: "absolute",
+                transform: "translateX(-50%)",
+            }}
         >
             <Link href="/" scroll={false}>
                 <CloseIcon
@@ -50,6 +51,7 @@ const Window: React.FC<Props> = ({
                     className={styles.closeButton}
                 />
             </Link>
+            
             {children}
         </motion.div>
     );
