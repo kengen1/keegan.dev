@@ -149,35 +149,33 @@ const portfolio: PortfolioData = {
             {
                 title: "Leetcode Study Bot",
                 imageUrl: "/images/projects/leetcode study bot.png",
-                description: "A Discord bot for integrating Leetcode challenges into Discord servers.",
+                description: "A Discord bot for integrating Leetcode challenges into Discord servers. Provides daily question threads, hints, topic-based and random questions, as well as roadmap-guided problems.",
                 demoUrl: "",
                 githubUrl: "https://github.com/kengen1/Leetcode-Study-Bot",
-                technologies: ["TypeScript", "Node", "GraphQL"],
-            },
+                technologies: ["TypeScript", "Node", "GraphQL"]
+            },            
             {
-                "title": "Developer Portfolio",
-                "imageUrl": "/images/projects/developer portfolio.png",
-                "description": "A website to showcase my projects, and experience as a software engineer. Features interactive 3D elements powered by Three.js.",
-                "demoUrl": "",
-                "githubUrl": "https://github.com/kengen1/keegan.dev",
-                "technologies": ["Next", "TypeScript", "React", "Tailwind", "Three", "SCSS"]
+                title: "Developer Portfolio",
+                imageUrl: "/images/projects/developer portfolio.png",
+                description: "A website to showcase my projects, and experience as a software engineer. Features interactive 3D elements powered by Three.js.",
+                demoUrl: "https://kengen.dev",
+                githubUrl: "https://github.com/kengen1/kengen.dev",
+                technologies: ["Next", "TypeScript", "React", "Tailwind", "Three", "SCSS"]
             },
             {
                 title: "Passer-Blocker Board Game",
                 imageUrl: "/images/projects/passer blocker.png",
-                description: "*insert description*.",
-                demoUrl: "",
+                description: "A terminal-based 2-player board game where the Passer must form a path from top to bottom while the Blocker tries to prevent it. Includes AI players using Minimax and Monte Carlo algorithms.",
                 githubUrl: "https://github.com/kengen1/Passer-Eater",
-                technologies: ["C++"],
+                technologies: ["C++"]
             },
             {
                 title: "Generalized Tower of Hanoi",
                 imageUrl: "/images/projects/generalized tower of hanoi.png",
-                description: "*insert description*.",
-                demoUrl: "",
+                description: "An terminal-based application for solving the Tower of Hanoi problem with n towers. Implements multiple solvers, including an A* solver for optimal moves.",
                 githubUrl: "https://github.com/kengen1/Mini-Shrdlu",
-                technologies: ["C++"],
-            },
+                technologies: ["C++"]
+            },            
         ],
     },
     work: [
