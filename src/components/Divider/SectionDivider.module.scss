@@ -1,0 +1,57 @@
+@use "../../../styles/variables.scss" as *;
+
+@mixin dividerDecorator {
+    content: "";
+    width: 4px;
+    height: 4px;
+    display: block;
+    position: absolute;
+    top: -1.5px;
+    border-radius: 50%;
+    background: $dark-text-colour;
+}
+
+.sectionDivider {
+    display: flex;
+    align-items: center;
+    column-gap: $spacing-sm;
+    padding: 0 4rem;
+
+    .centralText {
+        color: $dark-text-colour;
+        font-family: $code-font-stack;
+        white-space: nowrap;
+        margin: $spacing-xs;
+        font-size: xx-large;
+    }
+
+    .divider {
+        flex: 1;
+        border-bottom: 1px solid rgb(84, 84, 84);
+        position: relative;
+        margin: 0;
+    }
+
+    .leftDivider {
+        &::after {
+            @include dividerDecorator;
+            right: 0;
+        }
+    }
+
+    .rightDivider {
+        &::before {
+            @include dividerDecorator;
+            left: 0;
+        }
+    }
+}
+
+
+@media screen and (max-width: $sm) {
+    .sectionDivider {
+        .centralText {
+            font-size: x-large;
+        }
+    }
+}

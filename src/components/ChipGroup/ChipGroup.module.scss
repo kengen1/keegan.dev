@@ -1,0 +1,39 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+.chipStack {
+    @include reset-ul-styles;
+    font-family: $code-font-stack;
+
+    display: flex;
+    flex-direction: row;
+    column-gap: $spacing-xxs;
+    row-gap: $spacing-xxs;
+    flex-wrap: wrap;
+
+    &.right {
+        flex-direction: row-reverse;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+
+    .chip {
+        display: flex;
+        font-size: small;
+        align-items: center;
+        column-gap: $spacing-xxs;
+        border-radius: 64px;
+        padding: 3px 6px;
+
+        &.dark {
+            background: $cool-grey-400;
+            color: $dark-text-colour;
+        }
+        &.light {
+            background: $cool-grey-1000;
+            color: $light-text-colour;
+        }
+    }
+}

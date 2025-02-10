@@ -1,0 +1,98 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+@use "../../../styles/_global.scss" as *;
+
+.projectCardDeck {
+    position: relative;
+    display: flex;
+    margin: $spacing-sm auto;
+    flex-direction: row;
+    column-gap: $spacing-md;
+    row-gap: $spacing-md;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .projectCard {
+        background: $cool-grey-300;
+        min-height: fit-content;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 6px;
+        @include elevation-shadow;
+
+        .thumbnail {
+            height: 220px;
+            position: relative;
+        }
+
+        .details {
+            .mainContent {
+                padding: $spacing-sm $spacing-sm $spacing-xxs $spacing-sm;
+
+                .title {
+                    text-align: center;
+                    font-family: $code-font-stack;
+                    margin: 0;
+                }
+
+                .description {
+                    max-height: none;
+                    overflow: visible;
+                    white-space: normal;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+
+                .buttonGroup {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    row-gap: $spacing-xs;
+
+                    .externalLinksGroup {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        column-gap: $spacing-xs;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            .technologyList {
+                display: flex;
+                flex-wrap: wrap;
+                gap: $spacing-xs;
+                padding-top: $spacing-xs;
+            }
+        }
+
+        .builtWith {
+            width: 100%;
+            color: $cool-grey-900;
+            display: flex;
+            gap: $spacing-xs;
+            padding: $spacing-xxs $spacing-sm;
+
+            strong {
+                white-space: nowrap;
+                margin-right: $spacing-xs;
+            }
+
+            .technologyList {
+                display: flex;
+                flex-wrap: wrap;
+                gap: $spacing-xs;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $sm) {
+    .projectCardDeck {
+        .projectCard {
+            height: fit-content;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+.unorderedList {
+    position: relative;
+    list-style: none;
+    padding-left: 1.5em;
+
+    li {
+        margin-top: $spacing-xxs;
+        &:before {
+            content: "►";
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    &.reset {
+        @include reset-ul-styles;
+
+        li {
+            &:before {
+                content: "";
+            }
+        }
+    }
+}

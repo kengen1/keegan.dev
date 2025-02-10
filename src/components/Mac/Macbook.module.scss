@@ -1,0 +1,35 @@
+@use "../../../styles/variables.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+
+.screenContainer {
+  width: 333px; // Adjust width dynamically later
+  height: 216px; // Adjust height dynamically later
+  background: url("/images/macbookWallpaper.png") no-repeat center center;
+  background-size: cover; // Ensures the image covers the screen
+  border-radius: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);  
+}
+
+.innerContent {
+  width: 100%;
+  height: 85%;
+  font-family: $code-font-stack;
+  font-size: $font-size-md;
+  color: $dark-text-colour;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dockContent {
+  width: 100%;
+  height: 18%;
+  display: flex;
+  align-items: center;
+}

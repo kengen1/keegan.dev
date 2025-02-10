@@ -1,0 +1,33 @@
+@use "../../../styles/variables.scss" as *;
+
+.achievementItem {
+    display: flex;
+    flex-direction: row;
+    column-gap: $spacing-xs;
+
+    &:not(:last-child) {
+        margin-bottom: $spacing-sm;
+    }
+
+    .achievementIcon {
+        display: block;
+        min-width: 32px;
+        min-height: 32px;
+        position: relative;
+        top: -4px;
+    }
+
+    .details {
+        .title {
+            margin: 0;
+            font-family: $code-font-stack;
+        }
+        .date {
+            color: $cool-grey-700;
+        }
+        .description {
+            margin: $spacing-xxs 0 0 0;
+            color: $cool-grey-900;
+        }
+    }
+}

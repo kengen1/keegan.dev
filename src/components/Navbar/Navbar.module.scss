@@ -1,0 +1,40 @@
+@use "../../../styles/variables.scss" as *;
+
+.navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: $light-text-colour;
+  border-radius: 30px;
+  z-index: 1000;
+  gap: 10px;
+
+  &--horizontal {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    height: 80px;
+    width: auto;
+    padding: 0 $spacing-sm;
+
+    @media screen and (max-width: $md) {
+      flex-direction: column;
+      height: auto;
+      width: 80px;
+      row-gap: $spacing-xs;
+    }
+  }
+
+  &--vertical {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    width: 85px;
+    height: auto;
+    padding: $spacing-sm 0;
+  }
+}
