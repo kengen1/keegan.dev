@@ -117,8 +117,8 @@ const portfolio: PortfolioData = {
                 "title": "Digital Garden",
                 "imageUrl": "/images/projects/digital garden.png",
                 "description": "A graph-powered visualization of my thoughts and ideas, evolving like a garden—cultivated, expanded, and refined over time.",
-                "demoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                "githubUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "demoUrl": "https://digital-garden.kengen.dev/",
+                "githubUrl": "https://github.com/kengen1/Digital-Garden",
                 "technologies": ["Markdown", "JavaScript", "SCSS", "HTML"]
             },
             {
