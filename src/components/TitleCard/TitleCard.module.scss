@@ -1,5 +1,7 @@
 $title-font: "Courier New", Courier, monospace;
-$breakpoint-mobile: 768px;
+$breakpoint-mobile: 768px; // When the hamburger appears
+$breakpoint-medium: 1100px; // Intermediate size adjustment
+
 .titleCard {
     position: absolute;
     top: 20px;
@@ -16,8 +18,17 @@ $breakpoint-mobile: 768px;
     h1 {
         border-radius: 10px;
         font-family: $title-font;
-        font-size: 2rem;
+        font-size: 2rem; // Default size
         margin: 0;
+        transition: font-size 0.3s ease-in-out;
+
+        @media screen and (max-width: $breakpoint-medium) {
+            font-size: 1.75rem; // Slightly smaller at medium screen
+        }
+
+        @media screen and (max-width: 850px) {
+            font-size: 1.5rem; // Even smaller before mobile
+        }
     }
 
     @media screen and (max-width: $breakpoint-mobile) {
@@ -25,6 +36,10 @@ $breakpoint-mobile: 768px;
         left: 50%;
         transform: translateX(-50%);
         justify-content: center;
+
+        h1 {
+            font-size: 1.25rem; // Final size before switching layout
+        }
     }
 }
 
