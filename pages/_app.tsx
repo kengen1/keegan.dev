@@ -3,9 +3,10 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useState } from "react";
 import { useTransitionFix } from "@/hooks/router";
-import { Navbar } from "@/components/Navbar"; // ✅ Import Navbar
+import { Navbar } from "@/components/Navbar";
 import { ParticleWallpaper } from "@/components/Wallpaper";
 import "styles/_global.scss";
+import { TitleCard } from "@/components/TitleCard/TitleCard";
 
 const App = ({ Component, pageProps }: AppProps) => {
     const [searchQuery, setSearchQuery] = useState<string>("");
@@ -13,8 +14,6 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     return (
         <>
-        
-            {/* Meta Head */}
             <Head>
                 <title>{portfolio.meta.mainTitle}</title>
                 <meta
@@ -27,14 +26,9 @@ const App = ({ Component, pageProps }: AppProps) => {
                     content={portfolio.meta.ogDescription}
                 />
             </Head>
-
-            {/* ✅ Add Particle Background */}
             <ParticleWallpaper/>
-
-            {/* ✅ Render Navbar above Particle Background */}
+            <TitleCard />
             <Navbar />
-
-            {/* ✅ Render Main Page Content */}
             <Component {...pageProps} />
         </>
     );

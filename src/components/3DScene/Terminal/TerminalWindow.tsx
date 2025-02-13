@@ -1,6 +1,6 @@
 import React from "react";
-import TypingText from "./TypingText"; // Import the TypingText component
-import styles from "./TerminalWindow.module.scss"; // Add styles for terminal window
+import TypingText from "./TypingText";
+import styles from "./TerminalWindow.module.scss";
 
 const TerminalWindow: React.FC = () => {
   return (
