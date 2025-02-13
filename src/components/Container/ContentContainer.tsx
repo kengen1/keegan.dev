@@ -32,7 +32,7 @@ const ContentContainer: React.FC<Props> = ({
             }`}
             style={{
                 width: width || "100%",
-                maxWidth: maxWidth || 800,
+                maxWidth: maxWidth || 1000,
                 userSelect: disableHighlight ? "none" : "text",
                 padding,
                 textAlign,

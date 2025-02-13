@@ -10,6 +10,7 @@
     row-gap: $spacing-md;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: hidden;
 
     .projectCard {
         background: $cool-grey-300;
@@ -18,10 +19,15 @@
         max-width: 500px;
         border-radius: 6px;
         @include elevation-shadow;
+        overflow: hidden;
 
         .thumbnail {
-            height: 220px;
+            height: 200px;
             position: relative;
+            border-top-left-radius: 6px;  // Rounds top-left corner
+            border-top-right-radius: 6px; // Rounds top-right corner
+            width: 100%;
+            object-fit: cover; // Ensures the image fills the space nicely
         }
 
         .details {
@@ -30,7 +36,7 @@
 
                 .title {
                     text-align: center;
-                    font-family: $code-font-stack;
+                    font-family: monospace;
                     margin: 0;
                 }
 
@@ -72,17 +78,20 @@
             color: $cool-grey-900;
             display: flex;
             gap: $spacing-xs;
-            padding: $spacing-xxs $spacing-sm;
-
+            padding-bottom: $spacing-xxs;
+            
             strong {
                 white-space: nowrap;
                 margin-right: $spacing-xs;
+                margin-left: $spacing-xs;
+
             }
 
             .technologyList {
                 display: flex;
                 flex-wrap: wrap;
                 gap: $spacing-xs;
+                padding-right: $spacing-md;
             }
         }
     }

@@ -1,61 +1,65 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import * as THREE from "three";
 import { Environment, ContactShadows } from "@react-three/drei";
-import Macbook from "../Mac/Macbook";
-import Bonsai from "./Bonsai";
+import Macbook from "./Mac/Macbook";
+import Bonsai from "./Bonsai/Bonsai";
 
-export default function Scene() {
-  const [scale, setScale] = useState(1);
-  const [cameraPosition, setCameraPosition] = useState<[number, number, number]>([0, 0, 20]);
-  const [bonsaiScale, setBonsaiScale] = useState<[number, number, number]>([3, 3, 3]);
-  const [bonsaiPosition, setBonsaiPosition] = useState<[number, number, number]>([11, -3.3, 0]);
+function AdaptiveCamera() {
+  const { camera } = useThree();
 
   useEffect(() => {
-    const updateScene = () => {
-      const width = window.innerWidth;
+    const updateFov = () => {
+      if (camera instanceof THREE.PerspectiveCamera) {
+        const width = window.innerWidth;
+        let newFov = 65;
 
-      if (width > 1200) {
-        setScale(1.15);
-        setCameraPosition([0, 0, 20]);
-        setBonsaiPosition([11, -3.3, 0]); // Correct position for large screens
-        setBonsaiScale([3, 3, 3]); // Larger scale for large screens
-      } else if (width > 800) {
-        setScale(0.8);
-        setCameraPosition([0, 0, 25]);
-        setBonsaiPosition([9, -3.6, 1]); // Adjusted position for medium screens
-        setBonsaiScale([2.7, 2.7, 2.7]); // Adjusted scale for medium screens
-      } else {
-        setScale(0.6);
-        setCameraPosition([0, 0, 30]);
-        setBonsaiPosition([5, -5.5, 2]); // Adjusted position for small screens
-        setBonsaiScale([2, 2, 2]); // Slightly smaller scale for small screens
+        if (width > 1400) {
+          newFov = 60;  // Large screens
+        } else if (width > 1200) {
+          newFov = 75;  // Slight zoom-out
+        } else if (width > 900) {
+          newFov = 90;  // Medium screens
+        } else if (width > 700) {
+          newFov = 100; // Smaller screens
+        } else {
+          newFov = 120; // Smallest screens
+        }
+
+        camera.fov = newFov;
+        camera.updateProjectionMatrix();
       }
     };
 
-    window.addEventListener("resize", updateScene);
-    updateScene();
+    window.addEventListener("resize", updateFov);
+    updateFov(); // Set initial FOV
 
     return () => {
-      window.removeEventListener("resize", updateScene);
+      window.removeEventListener("resize", updateFov);
     };
-  }, []);
+  }, [camera]);
+
+  return null; // This component only modifies the camera
+}
+
+export default function Scene() {
+  const dimensions = {
+    scale: 1,
+    cameraPosition: [0, 0, 20] as [number, number, number],
+    bonsaiScale: [3, 3, 3] as [number, number, number],
+    bonsaiPosition: [11, -3.3, 0] as [number, number, number],
+    macbookScale: 1.15,
+    macbookPosition: [0, 1, 0] as [number, number, number],
+  };
 
   return (
-    <Canvas camera={{ position: cameraPosition, fov: 65 }}>
+    <Canvas dpr={[1,2]} camera={{ position: dimensions.cameraPosition, fov: 65 }}>
+      <AdaptiveCamera /> {/* Dynamically updates FOV at runtime */}
       <pointLight position={[10, 10, 10]} intensity={1.5} />
       <Suspense fallback={null}>
-        {/* Group containing the entire scene */}
-        <group scale={[scale, scale, scale]}>
-          {/* MacBook */}
-          <group position={[0, 1, 0]}>
-            <Macbook />
-          </group>
-
-          {/* Bonsai */}
-          <group position={bonsaiPosition} scale={bonsaiScale}>
-            <Bonsai />
-          </group>
-
+        <group scale={[dimensions.scale, dimensions.scale, dimensions.scale]}>
+          <Macbook scale={dimensions.macbookScale} position={dimensions.macbookPosition} />
+          <Bonsai scale={dimensions.bonsaiScale} position={dimensions.bonsaiPosition} />
           <Environment preset="city" />
         </group>
       </Suspense>

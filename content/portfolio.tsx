@@ -80,7 +80,7 @@ export interface EducationContent {
 
 const portfolio: PortfolioData = {
     meta: {
-        mainTitle: "Keegan Hidson - Developer Portfolio",
+        mainTitle: "kengen.dev",
         mainDescription:
             "Welcome to my developer portfolio, where I try to explore and demystify the intracacies of software engineering.",
         ogTitle: "Keegan Hidsons's Developer Portfolio",
@@ -116,7 +116,7 @@ const portfolio: PortfolioData = {
             {
                 "title": "Digital Garden",
                 "imageUrl": "/images/projects/digital garden.png",
-                "description": "A graph-powered visualization of my thoughts and ideas, evolving like a garden—cultivated, expanded, and refined over time.",
+                "description": "A graph-powered visualisation of my thoughts and ideas, evolving like a garden—cultivated, expanded, and refined over time.",
                 "demoUrl": "https://digital-garden.kengen.dev/",
                 "githubUrl": "https://github.com/kengen1/Digital-Garden",
                 "technologies": ["Markdown", "JavaScript", "SCSS", "HTML"]
@@ -143,7 +143,7 @@ const portfolio: PortfolioData = {
                 imageUrl: "/images/projects/vivid sync pi.png",
                 description: "A Python-based IoT application that receives data from the Vivid-Sync web app and controls an LED strip display.",
                 demoUrl: "",
-                githubUrl: "https://github.com/kengen1/Vivid-Sync",
+                githubUrl: "https://github.com/kengen1/Vivid-Sync-Pi",
                 technologies: ["Python", "Raspberry Pi", "Flask"],
             },
             {
@@ -170,7 +170,7 @@ const portfolio: PortfolioData = {
                 technologies: ["C++"]
             },
             {
-                title: "Generalized Tower of Hanoi",
+                title: "Generalised Tower of Hanoi",
                 imageUrl: "/images/projects/generalized tower of hanoi.png",
                 description: "An terminal-based application for solving the Tower of Hanoi problem with n towers. Implements multiple solvers, including an A* solver for optimal moves.",
                 githubUrl: "https://github.com/kengen1/Mini-Shrdlu",
@@ -256,18 +256,18 @@ const portfolio: PortfolioData = {
         {
             title: "Adelaide University Competitive Programming League",
             date: "RSP x CPC Contest - 2025",
-            description: "Competed in the regional-level programming competition, securing a top 5 placement.",
+            description: "Competed in a regional-level programming contest as a team of three, solving as many problems as possible in a single-day event. The problems focused on algorithms, data structures, and problem-solving under time constraints."
         },
         {
             title: "Cochlear Hackathon - 2nd Place",
             date: "2024",
-            description: "Second place in Cochlear's annual hackathon for an innovative cloud-based solution.",
+            description: "Developed an image classification model to identify key visual components in Cochlear's mobile apps, enabling developers and product managers to search screenshot repositories by keyword."
         },
         {
             title: "Cochlear Hackathon - 1st Place",
             date: "2023",
-            description: "Won the Cochlear internal hackathon for creating a prototype to optimize clinic operations.",
-        },
+            description: "Built an LLM chatbot fine-tuned on internal data to streamline employee onboarding, winning first place in Cochlear's internal hackathon."
+        },        
     ],
 };
 

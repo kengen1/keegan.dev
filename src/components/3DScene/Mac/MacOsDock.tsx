@@ -1,6 +1,6 @@
 import React from "react";
 import { Dock } from "primereact/dock";
-import portfolio from "../../../content/portfolio";
+import portfolio from "../../../../content/portfolio";
 import styles from "./MacOsDock.module.scss";
 
 const MacOsDock: React.FC = () => {

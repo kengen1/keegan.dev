@@ -4,7 +4,6 @@ import { useGLTF, Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import styles from "./Macbook.module.scss";
 import TerminalWindow from "../Terminal/TerminalWindow";
-import portfolio from "../../../content/portfolio";
 import MacMenuBar from "./MacMenuBar";
 import MacOsDock from "./MacOsDock";
 
@@ -18,33 +17,6 @@ export default function Macbook(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
     "/models/mac-draco.glb"
   ) as unknown as GLTFResult;
-  const [scale, setScale] = useState(1);
-
-  useEffect(() => {
-    let resizeTimeout: number;
-
-    const updateScale = () => {
-      cancelAnimationFrame(resizeTimeout);
-      resizeTimeout = requestAnimationFrame(() => {
-        const width = window.innerWidth;
-        if (width > 1200) {
-          setScale(1.05);
-        } else if (width > 800) {
-          setScale(0.8);
-        } else {
-          setScale(0.6);
-        }
-      });
-    };
-
-    window.addEventListener("resize", updateScale);
-    updateScale();
-
-    return () => {
-      window.removeEventListener("resize", updateScale);
-      cancelAnimationFrame(resizeTimeout);
-    };
-  }, []);
 
   useFrame((state) => {
     if (!group.current) return;
@@ -72,7 +44,7 @@ export default function Macbook(props: JSX.IntrinsicElements["group"]) {
   });
 
   return (
-    <group ref={group} scale={[scale, scale, scale]} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <group rotation-x={-0.425} position={[0, -0.04, 0.41]}>
         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
           <mesh

@@ -1,12 +1,6 @@
 // SCSS variables for defining the colour palette for light/dark mode and
 // font families.
 
-// Montserrat.
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-
-// Ubuntu Mono.
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
 $theme-transition-duration: 0.2s;
 $dark-mode-transition-duration: 0.2s;
 
@@ -77,7 +71,7 @@ $cool-grey-1000: hsl(242, 15%, 90%);
  */
 
 $regular-font-stack: "Montserrat", Helvetica, Trebuchet MS, Arial;
-$code-font-stack: "Ubuntu Mono", Consolas, monaco, Courier New;
+$code-font-stack: Courier New;
 
 $font-size-xs: 8px;
 $font-size-sm: 12px;
